@@ -1,0 +1,48 @@
+{
+  "name": "bun-express-template",
+  "module": "index.ts",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "bun --watch --smol run ./src/index.ts",
+    "start": "bun run ./src/index.ts",
+    "prepare": "husky",
+    "lint-staged": "npx lint-staged"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
+    "@types/bun": "latest",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "@types/jsonwebtoken": "^9.0.7",
+    "@types/request-ip": "^0.0.41",
+    "eslint": "^9.17.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.2.11",
+    "prettier": "^3.4.2"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "helmet": "^8.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.9.2",
+    "request-ip": "^3.3.0",
+    "winston": "^3.17.0"
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx}": [
+      "bunx eslint --fix",
+      "bunx prettier --write"
+    ],
+    "**/*.{json,md,yml,css,scss,html}": [
+      "bunx prettier --write"
+    ]
+  }
+}

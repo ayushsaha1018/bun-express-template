@@ -1,0 +1,17 @@
+services:
+  app:
+    # Use the Bun slim image from Docker Hub
+    image: ayush1018/bun-express-template:lastest
+    # Map the app's source code directory to the container
+    volumes:
+      - .env:/app/.env
+    # Set the working directory in the container
+    working_dir: /app
+    # Expose the port on which the app runs
+    ports:
+      - "8080:8080"
+    # Command to start the application
+    command: ["bun", "start"]
+    # Ensure the container restarts unless stopped manually
+    restart: unless-stopped
+
